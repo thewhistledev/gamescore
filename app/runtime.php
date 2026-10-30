@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-if (!defined('APP_VERSION')) define('APP_VERSION', '1.2.1');
+if (!defined('APP_VERSION')) define('APP_VERSION', '1.2.2');
 require_once APP_ROOT.'/app/services.php';
 function sync_steam_v2(): int {
     $count=0;
@@ -19,19 +19,5 @@ function sync_steam_v2(): int {
     }
     return $count;
 }
-function sync_all_sources_v2(): int {
-    ensure_extended_schema();
-    if(!setting_value('sources_auto_sync',true)) return 0;
-    $count=0;
-    foreach(db()->query('SELECT * FROM sources WHERE enabled=1 ORDER BY id')->fetchAll() as $source) $count+=sync_configured_source($source);
-    if(setting_value('steam_enabled',true)&&setting_value('automation_sync_steam',true)) $count+=sync_steam_v2();
-    return $count;
-}
-function api_cron_v2(): never {
-    ensure_extended_schema();
-    $token=$_GET['token']??'';$config=cfg();
-    if(!$token||!hash_equals($config['cron_token']??'',$token)){http_response_code(403);exit('Forbidden');}
-    $count=sync_all_sources_v2();
-    header('Content-Type: application/json');echo json_encode(['imported'=>$count,'version'=>APP_VERSION,'time'=>date(DATE_ATOM)]);exit;
-}
+function api_cron_v2(): void { $token=(string)($_GET['token']??'');if($token===''||!hash_equals((string)(cfg()['cron_token']??''),$token)){http_response_code(403);exit('Forbidden');}$count=sync_all_sources();if(setting_value('automation_sync_steam',true)&&setting_value('steam_enabled',true))$count+=sync_steam_v2();header('Content-Type: application/json');echo json_encode(['imported'=>$count,'version'=>APP_VERSION,'time'=>date(DATE_ATOM)]);exit; }
 function display_update_body(string $body): string { return clean_update_body($body); }
