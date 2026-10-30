@@ -1,0 +1,18 @@
+{
+  "version": "1.1.0",
+  "released_at": "2026-10-30T10:00:00Z",
+  "notes": "Configurable source adapters, 22-section admin control room, GitHub updater, cleaned update rendering and fixed games grid.",
+  "files": [
+    {"path":"index.php"},
+    {"path":"app/services.php"},
+    {"path":"app/runtime.php"},
+    {"path":"app/updater.php"},
+    {"path":"app/admin_page.php"},
+    {"path":"views/admin.php"},
+    {"path":"views/game.php"},
+    {"path":"assets/app.css"},
+    {"path":"database/schema.sql"},
+    {"path":"README.md"},
+    {"path":"update.json"}
+  ]
+}
