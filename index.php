@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 require __DIR__.'/app/bootstrap.php';
-require_once __DIR__.'/app/services.php';
+require_once __DIR__.'/app/runtime.php';
 require_once __DIR__.'/app/admin_page.php';
 $route = trim(parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?? '/', '/');
 $base = rtrim(dirname($_SERVER['SCRIPT_NAME'] ?? ''), '/');
