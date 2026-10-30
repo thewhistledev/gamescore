@@ -14,6 +14,8 @@ if ($path === '/games') { page_games(); exit; }
 if ($path === '/updates') { page_updates(); exit; }
 if ($path === '/dashboard') { require_login(); page_dashboard(); exit; }
 if ($path === '/admin') { require_admin(); page_admin(); exit; }
+if ($path === '/checkout') { require_login(); stripe_checkout(); exit; }
+if ($path === '/stripe/webhook') { stripe_webhook(); exit; }
 if (preg_match('#^/game/([a-z0-9-]+)$#i',$path,$m)) { page_game($m[1]); exit; }
 if ($path === '/api/games') { api_games(); exit; }
 if ($path === '/api/updates') { api_updates(); exit; }
