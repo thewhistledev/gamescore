@@ -1,1 +1,32 @@
-<!doctype html><html lang="<?=e(function_exists('setting_value')?(string)setting_value('default_language','en'):'en')?>"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="<?=e(function_exists('setting_value')?(string)setting_value('seo_description','GameScore: factual game information and verified updates'):'GameScore: factual game information and verified updates')?>"><title><?=e($title)?><?=function_exists('setting_value')?e((string)setting_value('seo_title_suffix',' · GameScore')):' · '.e($site['name'])?></title><link rel="stylesheet" href="<?=url('/assets/app.css')?>"></head><body style="--accent:<?=e(function_exists('setting_value')?(string)setting_value('site_accent',$site['accent']??'#8b5cf6'):($site['accent']??'#8b5cf6'))?>"><?php $liveName=function_exists('setting_value')?(string)setting_value('site_name',$site['name']??'GameScore'):($site['name']??'GameScore');?><header class="nav"><a class="brand" href="<?=url('/')?>"><span class="brand-mark">G</span><span><?=e($liveName)?></span></a><nav><a href="<?=url('/games')?>">Games</a><a href="<?=url('/updates')?>">Updates</a><?php if($u):?><a href="<?=url('/dashboard')?>">Dashboard</a><?php if($u['role']==='admin'):?><a href="<?=url('/admin')?>">Admin</a><?php endif;?><a class="nav-user" href="<?=url('/logout')?>">Sign out</a><?php else:?><a href="<?=url('/login')?>">Sign in</a><a class="button small" href="<?=url('/register')?>">Join</a><?php endif;?></nav></header><?php if($f):?><div class="toast"><?=e($f)?></div><?php endif;?><main><?=$content?></main><footer><span>© <?=date('Y')?> <?=e($liveName)?></span><span>Verified sources · Editorial control · Open API</span></footer><?php if(function_exists('setting_value')&&setting_value('custom_css','')):?><style><?=setting_value('custom_css','')?></style><?php endif;?></body></html>
+<!doctype html>
+<html lang="<?=e(function_exists('setting_value')?(string)setting_value('default_language','en'):'en')?>">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="<?=e(function_exists('setting_value')?(string)setting_value('seo_description','GameScore: factual game information and verified updates'):'GameScore: factual game information and verified updates')?>">
+<title><?=e($title)?><?=function_exists('setting_value')?e((string)setting_value('seo_title_suffix',' · GameScore')):' · '.e($site['name'])?></title>
+<link rel="stylesheet" href="<?=url('/assets/app.css?v=1.2.0')?>">
+</head>
+<body class="<?=strtolower($title)==='admin'?'admin-page':''?>" style="--accent:<?=e(function_exists('setting_value')?(string)setting_value('site_accent',$site['accent']??'#8b5cf6'):($site['accent']??'#8b5cf6'))?>">
+<?php $liveName=function_exists('setting_value')?(string)setting_value('site_name',$site['name']??'GameScore'):($site['name']??'GameScore'); ?>
+<header class="nav">
+  <a class="brand" href="<?=url('/')?>"><span class="brand-mark">G</span><span><?=e($liveName)?></span></a>
+  <nav>
+    <a href="<?=url('/games')?>">Games</a>
+    <a href="<?=url('/updates')?>">Updates</a>
+    <?php if($u): ?>
+      <a href="<?=url('/dashboard')?>">Dashboard</a>
+      <?php if($u['role']==='admin'): ?><a href="<?=url('/admin')?>">Admin</a><?php endif; ?>
+      <a class="nav-user" href="<?=url('/logout')?>">Sign out</a>
+    <?php else: ?>
+      <a href="<?=url('/login')?>">Sign in</a>
+      <a class="button small" href="<?=url('/register')?>">Join</a>
+    <?php endif; ?>
+  </nav>
+</header>
+<?php if($f): ?><div class="toast"><?=e($f)?></div><?php endif; ?>
+<main><?=$content?></main>
+<footer><span>© <?=date('Y')?> <?=e($liveName)?></span><span>Verified sources · Editorial control · Open API</span></footer>
+<?php if(function_exists('setting_value')&&setting_value('custom_css','')): ?><style><?=setting_value('custom_css','')?></style><?php endif; ?>
+</body>
+</html>
