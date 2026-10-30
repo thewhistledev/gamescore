@@ -1,21 +1,11 @@
 {
-  "version": "1.3.0",
-  "released_at": "2026-10-30T13:00:00Z",
-  "notes": "Adds Tailwind CSS and shadcn-compatible design tokens/build tooling, upgrades the game update history to preserve Steam announcement markup, retrieves full Steam content by default, renders Steam BBCode and HTML safely with images, headings, lists, tables, links and code blocks, adds update format metadata, and hardens shared-host configuration handling.",
+  "version": "1.3.1",
+  "released_at": "2026-10-30T11:55:00Z",
+  "notes": "Fixes the source synchronisation crash caused by the removed legacy sync_steam() call, hardens the update-body cleanup regexes, validates TLS hostnames correctly, and adds body_format to the base database schema. This release is specifically intended to repair installations that received the broken 1.3.0 services.php copy.",
   "files": [
     {"path":"app/services.php"},
     {"path":"app/runtime.php"},
-    {"path":"app/steam_formatter.php"},
-    {"path":"app/admin_catalog.php"},
-    {"path":"app/admin_page.php"},
-    {"path":"translations/en_GB.php"},
-    {"path":"views/game.php"},
-    {"path":"views/layout.php"},
-    {"path":"assets/steam.css"},
-    {"path":"components.json"},
-    {"path":"package.json"},
-    {"path":"tailwind.config.js"},
-    {"path":"resources/css/tailwind.css"},
+    {"path":"database/schema.sql"},
     {"path":"update.json"}
   ]
 }
