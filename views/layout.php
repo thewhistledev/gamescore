@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="<?=e(function_exists('setting_value')?(string)setting_value('seo_description','GameScore: factual game information and verified updates'):'GameScore: factual game information and verified updates')?>">
 <title><?=e($title)?><?=function_exists('setting_value')?e((string)setting_value('seo_title_suffix',' · GameScore')):' · '.e($site['name'])?></title>
-<link rel="stylesheet" href="<?=url('/assets/app.css?v=1.2.0')?>">
+<link rel="stylesheet" href="<?=url('/assets/app.css?v=1.2.1')?>">
+<?php if(strtolower($title)==='admin'): ?><link rel="stylesheet" href="<?=url('/assets/admin.css?v=1.2.1')?>"><?php endif; ?>
 </head>
 <body class="<?=strtolower($title)==='admin'?'admin-page':''?>" style="--accent:<?=e(function_exists('setting_value')?(string)setting_value('site_accent',$site['accent']??'#8b5cf6'):($site['accent']??'#8b5cf6'))?>">
 <?php $liveName=function_exists('setting_value')?(string)setting_value('site_name',$site['name']??'GameScore'):($site['name']??'GameScore'); ?>
