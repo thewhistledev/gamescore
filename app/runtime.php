@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-if (!defined('APP_VERSION')) define('APP_VERSION', '1.1.0');
+if (!defined('APP_VERSION')) define('APP_VERSION', '1.2.1');
 require_once APP_ROOT.'/app/services.php';
 function sync_steam_v2(): int {
     $count=0;
