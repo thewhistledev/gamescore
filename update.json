@@ -1,15 +1,20 @@
 {
-  "version": "1.2.2",
-  "released_at": "2026-10-30T12:00:00Z",
-  "notes": "Introduces the translation system, adds the default en_GB language catalogue, converts admin setting labels and interface text to translation tokens, makes en_GB the default locale, and updates the application version so existing installations can detect the release.",
+  "version": "1.3.0",
+  "released_at": "2026-10-30T13:00:00Z",
+  "notes": "Adds Tailwind CSS and shadcn-compatible design tokens/build tooling, upgrades the game update history to preserve Steam announcement markup, retrieves full Steam content by default, renders Steam BBCode and HTML safely with images, headings, lists, tables, links and code blocks, adds update format metadata, and hardens shared-host configuration handling.",
   "files": [
-    {"path":"app/i18n.php"},
-    {"path":"translations/en_GB.php"},
-    {"path":"app/bootstrap.php"},
-    {"path":"app/admin_catalog.php"},
-    {"path":"views/admin.php"},
-    {"path":"views/layout.php"},
+    {"path":"app/services.php"},
     {"path":"app/runtime.php"},
+    {"path":"app/steam_formatter.php"},
+    {"path":"app/admin_catalog.php"},
+    {"path":"translations/en_GB.php"},
+    {"path":"views/game.php"},
+    {"path":"views/layout.php"},
+    {"path":"assets/steam.css"},
+    {"path":"components.json"},
+    {"path":"package.json"},
+    {"path":"tailwind.config.js"},
+    {"path":"resources/css/tailwind.css"},
     {"path":"update.json"}
   ]
 }
