@@ -1,19 +1,12 @@
 {
-  "version": "1.2.0",
-  "released_at": "2026-10-30T10:30:00Z",
-  "notes": "Reworked the admin control room with meaningful settings and wired those settings into homepage, games, updates, authentication, API, Steam sync, source syncing, automation, updater and payments. Removed the previous generic 22-section settings approach.",
+  "version": "1.2.1",
+  "released_at": "2026-10-30T11:15:00Z",
+  "notes": "Fixes the admin control-room navigation rendering, adds a dedicated responsive admin stylesheet, improves sizing and spacing across admin panels, adds a proper admin breadcrumb, improves mobile navigation behaviour and advances the application version so existing 1.1.x/1.2.0 installations can detect the release.",
   "files": [
-    {"path":"app/admin_catalog.php"},
-    {"path":"app/admin_page.php"},
-    {"path":"app/bootstrap.php"},
-    {"path":"app/services.php"},
-    {"path":"views/home.php"},
-    {"path":"views/games.php"},
+    {"path":"assets/admin.css"},
     {"path":"views/admin.php"},
-    {"path":"views/game.php"},
-    {"path":"assets/app.css"},
-    {"path":"database/schema.sql"},
-    {"path":"README.md"},
+    {"path":"views/layout.php"},
+    {"path":"app/runtime.php"},
     {"path":"update.json"}
   ]
 }
