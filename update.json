@@ -1,9 +1,12 @@
 {
-  "version": "1.2.1",
-  "released_at": "2026-10-30T11:15:00Z",
-  "notes": "Fixes the admin control-room navigation rendering, adds a dedicated responsive admin stylesheet, improves sizing and spacing across admin panels, adds a proper admin breadcrumb, improves mobile navigation behaviour and advances the application version so existing 1.1.x/1.2.0 installations can detect the release.",
+  "version": "1.2.2",
+  "released_at": "2026-10-30T12:00:00Z",
+  "notes": "Introduces the translation system, adds the default en_GB language catalogue, converts admin setting labels and interface text to translation tokens, makes en_GB the default locale, and updates the application version so existing installations can detect the release.",
   "files": [
-    {"path":"assets/admin.css"},
+    {"path":"app/i18n.php"},
+    {"path":"translations/en_GB.php"},
+    {"path":"app/bootstrap.php"},
+    {"path":"app/admin_catalog.php"},
     {"path":"views/admin.php"},
     {"path":"views/layout.php"},
     {"path":"app/runtime.php"},
